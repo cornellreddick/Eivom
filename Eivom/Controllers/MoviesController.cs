@@ -23,6 +23,7 @@ namespace Eivom.Controllers
             return Content("id=" + id);
         }
 
+        
         //movies
         public ActionResult Index(int? pageIndex, string sortBy)
         {
@@ -37,5 +38,11 @@ namespace Eivom.Controllers
 
             return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
         }
+
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
+        }
+               
     }
 }
