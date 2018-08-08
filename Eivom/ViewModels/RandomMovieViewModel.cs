@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Eivom.Models;
 
-namespace Eivom.Models.ViewModels
+namespace Eivom.ViewModels
 {
     public class RandomMovieViewModel
     {
