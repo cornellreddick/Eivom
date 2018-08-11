@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{ 
-    var className = Model.Customers.Count > 0 ? "popular" : null;
+    var className = Model.Customers.Count > 5 ? "popular" : null;
 }
 
 <h2 class="@className">@Model.Movie.Name</h2>

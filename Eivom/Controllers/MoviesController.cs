@@ -12,15 +12,15 @@ namespace Eivom.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
-        public ActionResult Random()
+        public ActionResult Customers()
         {
             var movie = new Movie() { Name = "Shrek!" };
 
             var customers = new List<Customer>
             {
-                new Customer {Name = "Customer 1" }, 
-                new Customer {Name = "Customer 2" }, 
-                new Customer {Name = "Customer 3" }
+                new Customer {Name = "John Smith" }, 
+                new Customer {Name = "Mary Williams" }, 
+                
 
             };
 
