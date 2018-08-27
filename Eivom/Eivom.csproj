@@ -251,6 +251,14 @@
     <Compile Include="Migrations\201808252203442_AddGenre1.Designer.cs">
       <DependentUpon>201808252203442_AddGenre1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808271825212_AddNewGenres.cs" />
+    <Compile Include="Migrations\201808271825212_AddNewGenres.Designer.cs">
+      <DependentUpon>201808271825212_AddNewGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808271828144_AddNewMovies.cs" />
+    <Compile Include="Migrations\201808271828144_AddNewMovies.Designer.cs">
+      <DependentUpon>201808271828144_AddNewMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -385,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808252203442_AddGenre1.resx">
       <DependentUpon>201808252203442_AddGenre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808271825212_AddNewGenres.resx">
+      <DependentUpon>201808271825212_AddNewGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808271828144_AddNewMovies.resx">
+      <DependentUpon>201808271828144_AddNewMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
