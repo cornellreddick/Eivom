@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Eivom.ViewModels;
-using System.Linq;
 using System.Data.Entity;
 
 
@@ -37,10 +36,12 @@ namespace Eivom.Controllers
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
 
             if (movie == null)
-            {
-                return HttpNotFound();
-            }
+            return HttpNotFound();
+
+
             return View(movie);
         }
+
+       
     }
 }

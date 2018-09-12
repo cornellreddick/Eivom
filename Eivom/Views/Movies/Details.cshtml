@@ -1,31 +1,29 @@
-﻿@model Eivom.Models.Movie;
-
+﻿@model Eivom.Models.Movie
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>@Model.Name</h2>
 <ul>
     <li>Genre: @Model.Genre.Name</li>
     <li>Release Date: @Model.ReleaseDate.ToLongDateString()</li>
-    <li>Added: @Model.DateAdded.ToLongDateString()</li>
+    <li>Date Added: @Model.DateAdded.ToLongDateString()</li>
     <li>Number in Stock: @Model.NumberInStock</li>
 </ul>
-    <thead>
+<thead>
+    <tr>
+        <th>Movie</th>
+        <th>Genre</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var movie in Model)
+    {
         <tr>
-            <th>Movie</th>
-            <th>Genre</th>
+            <td>@movie.Name</td>
+            <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
+            <td>@movie.Genre.Name</td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model)
-        {
-            <tr>
-                <td>@movie.Name</td>
-                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
-                <td>@movie.Genre.Name</td>
-            </tr>
-        }
-    </tbody>
+    }
+</tbody>
 
