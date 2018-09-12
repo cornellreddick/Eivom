@@ -7,13 +7,13 @@ namespace Eivom.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddMovie : IMigrationMetadata
+    public sealed partial class Genress : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMovie));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Genress));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808252106485_AddMovie"; }
+            get { return "201809122155521_Genress"; }
         }
         
         string IMigrationMetadata.Source

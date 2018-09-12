@@ -3,12 +3,12 @@ namespace Eivom.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addNewGenre2 : DbMigration
+    public partial class Genress : DbMigration
     {
         public override void Up()
         {
             Sql("INSERT INTO Genres (Id, Name) VALUES (1, 'Action')");
-            Sql("INSERT INTO Genres (Id, Name) VALUES (2, 'Thiller')");
+            Sql("INSERT INTO Genres (Id, Name) VALUES (2, 'Thriller')");
             Sql("INSERT INTO Genres (Id, Name) VALUES (3, 'Family')");
             Sql("INSERT INTO Genres (Id, Name) VALUES (4, 'Romance')");
             Sql("INSERT INTO Genres (Id, Name) VALUES (5, 'Comedy')");
