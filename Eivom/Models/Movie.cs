@@ -15,7 +15,7 @@ namespace Eivom.Models
         public string Name { get; set; }
 
         [Required]
-        public string Genre { get; set; }
+        public Genre Genre { get; set; }
         public byte GenreId { get; set; }
 
         public DateTime ReleaseDate { get; set; }
