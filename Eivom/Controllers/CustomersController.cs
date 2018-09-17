@@ -34,9 +34,12 @@ namespace Eivom.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(NewCustomerViewModel viewModel)
+        public ActionResult Create(Customer customer)
         {
-            return View();
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Customers");
+            
         }
         public ViewResult Index()
         {
