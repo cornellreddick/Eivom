@@ -33,6 +33,11 @@ namespace Eivom.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Create(NewCustomerViewModel viewModel)
+        {
+            return View();
+        }
         public ViewResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
