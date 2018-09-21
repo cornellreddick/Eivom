@@ -34,9 +34,16 @@ namespace Eivom.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            _context.Customers.Add(customer);
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                var customerInDB = _context.Customers.Single(c => c.Id == customer.Id);
+                TryUpdateModel(customerInDB);
+            }
+           
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
             
