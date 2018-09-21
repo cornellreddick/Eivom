@@ -30,7 +30,7 @@ namespace Eivom.Controllers
             {
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm",viewModel);
         }
 
         [HttpPost]
@@ -72,7 +72,7 @@ namespace Eivom.Controllers
                     Customers = customer,
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
-                return View("New", viewModel);
+                return View("CustomerForm", viewModel);
             
         }
         
