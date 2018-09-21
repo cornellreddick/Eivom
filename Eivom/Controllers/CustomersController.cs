@@ -26,7 +26,7 @@ namespace Eivom.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomerViewModel()
+            var viewModel = new CustomerFormViewModel()
             {
                 MembershipTypes = membershipTypes
             };
@@ -58,6 +58,22 @@ namespace Eivom.Controllers
             }
 
             return View(customer);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customers = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+                return View("New", viewModel);
+            
         }
         
     }
