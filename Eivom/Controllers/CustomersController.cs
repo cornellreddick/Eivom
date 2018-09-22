@@ -41,7 +41,11 @@ namespace Eivom.Controllers
             else
             {
                 var customerInDB = _context.Customers.Single(c => c.Id == customer.Id);
-                TryUpdateModel(customerInDB);
+                customerInDB.Name = customer.Name;
+                customerInDB.Birthdate = customer.Birthdate;
+                customerInDB.MembershipTypeId = customer.MembershipTypeId;
+                customerInDB.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+
             }
            
             _context.SaveChanges();
