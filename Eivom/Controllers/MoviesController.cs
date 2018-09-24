@@ -24,6 +24,11 @@ namespace Eivom.Controllers
             _context.Dispose();
         }
 
+        public ActionResult New()
+        {
+
+            return View();
+        }
         public ViewResult Index()
         {
             var movie = _context.Movies.Include(m => m.Genre).ToList();
