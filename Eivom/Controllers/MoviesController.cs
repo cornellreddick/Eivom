@@ -26,8 +26,13 @@ namespace Eivom.Controllers
 
         public ActionResult New()
         {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewMoveFormViewModel()
+            {
+                membershipTypes = membershipTypes
+            };
 
-            return View();
+            return View("MovieForm", viewModel);
         }
         public ViewResult Index()
         {
