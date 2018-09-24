@@ -8,7 +8,9 @@
 
 <h2>Movies</h2>
 
-<button type="submit" class="btn btn-primary">NEW MOVIE</button>
+<p>
+    @Html.ActionLink("New Movie", "New", "Movie", null, new { @class = "btn btn-primary" })
+</p>
 
 <table class="table table-bordered table-hover">
     <thead>
