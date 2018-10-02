@@ -8,7 +8,7 @@ namespace Eivom.ViewModels
 {
     public class MovieFormViewModel
     {
-        public IEnumerable<MembershipType> MembershipTypes { get; set; }
+        public IEnumerable<Genre> Genres { get; set; }
         public Movie Movie { get; set; }
     }
 }

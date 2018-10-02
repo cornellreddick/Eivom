@@ -26,10 +26,11 @@ namespace Eivom.Controllers
 
         public ActionResult New()
         {
-            var membershipTypes = _context.MembershipTypes.ToList();
+            var genre = _context.MembershipTypes.ToList();
             var viewModel = new MovieFormViewModel()
             {
-                MembershipTypes = membershipTypes
+                
+               Genres = genre
             };
 
             return View("MovieForm", viewModel);
