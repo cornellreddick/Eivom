@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-u
+
 
 namespace Eivom.Models
 {
@@ -19,13 +19,13 @@ namespace Eivom.Models
         public Genre Genre { get; set; }
         public byte GenreId { get; set; }
 
-        [Display(ReleaseDate = "Release Date")]
+        [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        [Display(DateAdded = "Date Added")]
+        [Display(Name = "Date Added")]
         public DateTime DateAdded { get; set; }
 
-        [Display(NumberInStock = "Number In Stock")]
+        [Display(Name = "Number In Stock")]
         public int NumberInStock { get; set; }
     }
 }
