@@ -26,7 +26,7 @@ namespace Eivom.Controllers
 
         public ActionResult New()
         {
-            var genre = _context.MembershipTypes.ToList();
+            var genre = _context.Genres.ToList();
             var viewModel = new MovieFormViewModel()
             {
                 
@@ -52,8 +52,7 @@ namespace Eivom.Controllers
             return View(movie);
 
         }
-
-
+        
         // GET: Movies/Random
         public ActionResult Random()
         {
