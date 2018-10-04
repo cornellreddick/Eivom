@@ -24,32 +24,38 @@ namespace Eivom.Controllers
             _context.Dispose();
         }
 
-        public ActionResult New()
-        {
-            var genre = _context.Genres.ToList();
-            var viewModel = new MovieFormViewModel()
-            {
-                
-               Genres = genre
-            };
-
-            return View("MovieForm", viewModel);
-        }
+       
         public ViewResult Index()
         {
             var movie = _context.Movies.Include(m => m.Genre).ToList();
 
             return View(movie);
         }
-
-        public ActionResult Details(int id)
+        public ActionResult New()
         {
-            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+            var genre = _context.Genres.ToList();
+            var viewModel = new MovieFormViewModel()
+            {
+
+                Genres = genre
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
                 return HttpNotFound();
 
-            return View(movie);
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+            return View("MovieForm", viewModel);
 
         }
         
