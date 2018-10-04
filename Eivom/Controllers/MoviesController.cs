@@ -108,6 +108,8 @@ namespace Eivom.Controllers
                 movieInDb.ReleaseDate = movie.ReleaseDate;
             }
 
+            _context.SaveChanges();
+
             return RedirectToAction("Index", "Movies");
         }
     }
