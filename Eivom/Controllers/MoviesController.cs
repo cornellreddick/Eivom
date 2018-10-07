@@ -31,13 +31,13 @@ namespace Eivom.Controllers
 
             return View(movie);
         }
-        public ActionResult New()
+        public ViewResult New()
         {
-            var genre = _context.Genres.ToList();
+            var genres = _context.Genres.ToList();
             var viewModel = new MovieFormViewModel()
             {
 
-                Genres = genre
+                Genres = genres
             };
 
             return View("MovieForm", viewModel);
