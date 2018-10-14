@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Eivom.ViewModels;
 using System.Data.Entity;
-
+using System.Data.Entity.Validation;
 
 namespace Eivom.Controllers
 {
@@ -107,8 +107,16 @@ namespace Eivom.Controllers
                 movieInDb.NumberInStock = movie.NumberInStock;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
             }
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
 
-            _context.SaveChanges();
+                Console.WriteLine(e);
+            }
+            
 
             return RedirectToAction("Index", "Movies");
         }
