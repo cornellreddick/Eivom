@@ -107,16 +107,8 @@ namespace Eivom.Controllers
                 movieInDb.NumberInStock = movie.NumberInStock;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
             }
-            try
-            {
-                _context.SaveChanges();
-            }
-            catch (DbEntityValidationException e)
-            {
-
-                Console.WriteLine(e);
-            }
             
+                _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
         }
