@@ -40,8 +40,8 @@ namespace Eivom.Controllers
             {
                 var viewModel = new CustomerFormViewModel
                 {
-                    Customers = customer,
-                    MembershipTypes = _context.MembershipTypes
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
 
                 };
 
@@ -92,7 +92,7 @@ namespace Eivom.Controllers
 
                 var viewModel = new CustomerFormViewModel
                 {
-                    Customers = customer,
+                    Customer = customer,
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", viewModel);
