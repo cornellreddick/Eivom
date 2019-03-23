@@ -13,5 +13,8 @@ namespace Eivom.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        public readonly static byte Unknown = 0;
+        public readonly static byte Action = 1;
     }
 }

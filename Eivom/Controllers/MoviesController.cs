@@ -94,6 +94,19 @@ namespace Eivom.Controllers
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
+            if(!ModelState.IsValid)
+            {
+                var viewmodel = new MovieFormViewModel
+                {
+
+                    Movie = movie,
+                    Genres = _context.Genres.ToList() 
+                };
+
+                return View("MovieForm", viewmodel);
+                
+            }
+
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
