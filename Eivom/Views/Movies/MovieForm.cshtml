@@ -30,8 +30,14 @@
         @Html.ValidationMessageFor(m => m.Movie.NumberInStock)
     </div>
     @Html.HiddenFor(m => m.Movie.Id)
+    @Html.AntiForgeryToken()
 
     <button type="submit" class="btn btn-primary">Save</button>
- 
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
 
