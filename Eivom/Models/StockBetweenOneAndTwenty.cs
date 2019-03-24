@@ -19,7 +19,7 @@ namespace Eivom.Models
             var numberOfStock = movie.NumberInStock;
 
 
-            return (numberOfStock != 0 && numberOfStock <= 20)
+            return (numberOfStock > 0 && numberOfStock <= 20)
                 ? ValidationResult.Success
                 : new ValidationResult("The field Number in Stock must be between 1 and 20");
         }
