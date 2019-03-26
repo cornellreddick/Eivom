@@ -36,7 +36,6 @@ namespace Eivom.Controllers
             var genres = _context.Genres.ToList();
             var viewModel = new MovieFormViewModel()
             {
-
                 Genres = genres
             };
 
@@ -50,9 +49,9 @@ namespace Eivom.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
+                
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
@@ -97,10 +96,9 @@ namespace Eivom.Controllers
         {
             if(!ModelState.IsValid)
             {
-                var viewmodel = new MovieFormViewModel
+                var viewmodel = new MovieFormViewModel(movie)
                 {
 
-                    Movie = movie,
                     Genres = _context.Genres.ToList() 
                 };
 
