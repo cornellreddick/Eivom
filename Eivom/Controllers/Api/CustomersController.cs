@@ -10,6 +10,9 @@ namespace Eivom.Controllers.Api
 {
     public class CustomersController : ApiController
     {
+        //api should never recieve or return domain objects. This can cause security holes. I'm using this code to get 
+        //use to how api's work. It is better to use a Data Transfer Object. 
+
         private ApplicationDbContext _context;
 
         public CustomersController()
