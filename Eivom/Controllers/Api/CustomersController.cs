@@ -42,11 +42,13 @@ namespace Eivom.Controllers.Api
 
         // POST /api/customers
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        // I'm going to remove CustomerDto and replace it with IHttpActionResult as the return type. 
+        //
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
@@ -55,7 +57,8 @@ namespace Eivom.Controllers.Api
 
             customerDto.Id = customer.Id;
 
-            return customerDto;
+            // Unified Resource Identifier (Uri)
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDto );
         }
 
         // PUT /api/customers/1
